@@ -101,7 +101,11 @@ module SerializationHelper
   end
 
   module Utils
-
+    
+    def self.unhash(hash, keys)
+      keys.map { |key| hash[key] }
+    end
+    
     def self.unhash_records(records, keys)
       rows = []
       records.each do |record|
